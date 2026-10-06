@@ -1,0 +1,47 @@
+/* Load after styles.css. App-matched Health Ledger themes. */
+:root{color-scheme:light;--bg:#f7f8f4;--card:#fff;--text:#1d2a24;--muted:#6d776f;--accent:#3b8e68;--accent-dark:#286c4d;--soft:#e5f3eb;--border:#e4e8e3;--shadow:0 5px 20px rgba(29,42,36,.045)}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#152019;--card:#1f2c24;--text:#eef4ef;--muted:#aab8ae;--accent:#6ec695;--accent-dark:#8cddb0;--soft:#294837;--border:#34483b;--shadow:0 5px 20px rgba(0,0,0,.12)}
+@media(prefers-color-scheme:dark){:root[data-theme="system"]{color-scheme:dark;--bg:#152019;--card:#1f2c24;--text:#eef4ef;--muted:#aab8ae;--accent:#6ec695;--accent-dark:#8cddb0;--soft:#294837;--border:#34483b;--shadow:0 5px 20px rgba(0,0,0,.12)}}
+:root[data-theme="osrs"]{color-scheme:light;--bg:#f3ead7;--card:#fff8e9;--text:#352719;--muted:#78664d;--accent:#9a742b;--accent-dark:#76531a;--soft:#ead9ad;--border:#d8c7a5;--shadow:0 5px 20px rgba(65,43,16,.08)}
+html,body{background:var(--bg);color:var(--text)}a{color:var(--accent-dark)}a:hover{color:var(--accent)}header,article,.skip{background:var(--card)}header,article,aside,footer{border-color:var(--border)}.brand{color:var(--text)}.mark{background:var(--soft);color:var(--accent-dark)}nav a[aria-current=page],aside{background:var(--soft)}.eyebrow,.intro,.date,footer{color:var(--muted)}article{box-shadow:var(--shadow)}section+section{border-color:var(--border)}.appearance{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px}.appearance select{font:inherit;min-height:42px;padding:8px 10px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text)}select:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}@media(max-width:1100px){.bar{flex-wrap:wrap}.appearance{margin-left:auto}}@media(max-width:780px){.appearance{margin-left:0}}@media print{html,body,article{background:white;color:black}.hero,.intro,.date,.eyebrow{color:black}.appearance{display:none}}
+
+
+/* Keep the appearance selector in the header's top-right corner. */
+header .bar {
+  position: relative;
+  padding-right: 240px;
+  min-height: 86px;
+}
+
+header .bar > .appearance {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  margin: 0;
+}
+
+@media (max-width: 780px) {
+  header .bar {
+    padding-right: 190px;
+  }
+
+  header .bar > .appearance {
+    right: 18px;
+  }
+
+  header .appearance > span {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  header .bar {
+    padding-right: 18px;
+  }
+
+  header .brand {
+    padding-right: 160px;
+    min-height: 42px;
+    font-size: 18px;
+  }
+}
